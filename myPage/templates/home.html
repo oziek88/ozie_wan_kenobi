@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block leaflet_requirements %}
+	{% load leaflet_tags %}
+	{% load staticfiles %}
+{% endblock %}
+
+{% block leafletstyles %}
+    {% leaflet_js %}
+    {% leaflet_css %}
+{% endblock %}
+
+{% block headerBOX %}
+<div class="container">
+  <div class="row">
+    <div class=" col-xs-4 text-left">
+      <div class="pull-left">
+      <i style="margin-top:3px; padding:5px; font-size:20px" class="fa fa-linkedin-square pull-left" aria-hidden="true"></i>
+        <h4 class="pull-left"><a href="https://www.linkedin.com/in/ian-kitchens-20013310b/">My Linkedin</a></h4>
+      <br><br><br><br>
+      <i style="margin-top:3px; padding:5px; font-size:20px" class="fa fa-facebook pull-left" aria-hidden="true"></i>
+        <h4 class="pull-left"><a href="https://www.facebook.com/ian.kitchens.5?ref=bookmarks">My Facebook</a></h4>
+        <br><br><br><br>
+      <i style="margin-top:3px; padding:5px; font-size:20px" class="fa fa-youtube-play pull-left" aria-hidden="true"></i>
+        <h4 class="pull-left"><a href="https://www.youtube.com/channel/UCDoRVJWT_qC9J7IOovcwUKQ">My Youtube</a></h4>
+      </div>
+
+    </div>
+    <div class=" col-xs-4 text-center">
+      <h3>Check me out!</h3>
+      <img src="{% static 'images/bitmoji/1.png' %}" id="intro_bitmoji" style="height:auto;width:140px" alt="My image"/>
+    </div>
+    <div class=" col-xs-4 text-left">
+      <div class="pull-right">
+        <i style="margin-top:3px; padding:5px; font-size:22px" class="fa fa-github pull-right" aria-hidden="true"></i>
+        <h4 class="pull-right"><a href="https://github.com/oziek88">My Github</a></h4>
+        <br><br><br><br>
+        <i style="margin-top:3px; padding:5px; font-size:22px" class="fa fa-laptop pull-right" aria-hidden="true"></i>
+        <h4 class="pull-right"><a href="https://devpost.com/oziek88?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">My Devpost</a></h4>
+        <br><br><br><br>
+        <i style="margin-top:3px; padding:5px; font-size:22px" class="fa fa-file-text-o pull-right" aria-hidden="true"></i>
+        <h4 class="pull-right"><a href="https://docs.google.com/a/mymail.vcu.edu/document/d/1BPMzer4jUkxwh7ObzFEihnE0BcprXlZpT7rgogpyjLI/edit?usp=sharing">My Resume</a></h4>
+      </div>
+    </div>
+
+      <!-- <div class="row">
+        <div class="col-md-4 col-md-push-8">Right Content</div>
+        <div class="col-md-8 col-md-pull-4">Content</div>
+      </div>
+    </div> -->
+  </div>
+</div>
+{% endblock %}
+
+{% block main_content %}
+<div id="intro2me">
+	<div id="ozie-title">
+		<div id="o" class="title-letter">O</div>
+		<div id="z" class="title-letter">Z</div>
+		<div id="i" class="title-letter">I</div>
+		<div id="e" class="title-letter">E</div>
+	</div>
+
+
+  
+  <div id="meChart">
+    <div id="chartToggles" style="float:right; margin-right:50px;">
+      <input type="radio" name="radData" id="radComputing" value="data_computing" checked="checked" >
+      <label for="radComputing">Computing</label>
+      <br>
+      <input type="radio" name="radData" id="radPersonality" value="data_personality" >
+      <label for="radPersonality">Personality</label>
+      <br>
+      <input type="radio" name="radData" id="radInterests" value="data_interests" >
+      <label for="radInterests">Interests</label>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <div id='mapBuffer' >
+    {% leaflet_map "sidemap" callback="window.map_init_basic" %}
+  </div>
+    
+  
+   
+
+<!-- <div id="chamber">
+
+  <div id="chamber-rules" style="float:right">
+  <p><i>You need to build a key to break in</i></p>
+  </div>
+
+  <div id="key">
+    <div id="o_key"></div>
+    <div id="i_key"></div>
+    <div id="z_key"></div>
+    <div id="e_key"></div>
+  </div>
+  
+</div> -->
+{% endblock %}

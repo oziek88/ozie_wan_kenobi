@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+{% block leaflet_requirements %}{% endblock %}
+<head>
+  <title>Ozie</title>
+  <meta charset="utf-8">
+
+  {% load leaflet_tags %}
+  {% load staticfiles %}
+
+  {% block leafletstyles %}{% endblock %}
+
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" type = "text/css"/> 
+  <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  
+</head>
+<body>
+	<script src="{% static 'jQuery/jquery-3.0.0.min.js' %}"></script>
+	<script src="{% static 'jQuery/jquery-ui-1.11.4.custom/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'jQuery/jquery-ui-touch-punch.min.js' %}"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'd3/d3.v3.min.js' %}"></script>
+	<script src="{% static 'js/base.js' %}"></script>
+
+
+<div id="headerBOX">
+{% block headerBOX %}{% endblock %}
+</div>
+
+
+
+<div id="theThik">
+{% block main_content %}{% endblock %}
+</div>
+
+</body>
+</html>
