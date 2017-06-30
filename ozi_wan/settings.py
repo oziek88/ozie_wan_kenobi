@@ -25,7 +25,7 @@ SECRET_KEY = '*sd-0wt0o1bli7t-l5+2o!1tsz+#sy01mh^5ok4tp=!2*n&fxy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.230.94.187','ec2-34-230-94-187.compute-1.amazonaws.com','ozie-wan-kenobi.com','www.ozie-wan-kenobi.com']
 
 
 # Application definition
